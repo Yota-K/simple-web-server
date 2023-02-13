@@ -1,0 +1,9 @@
+<ifModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /
+
+# リクエストされたURLに htmlという拡張子が含まれている場合、拡張子なしでページにアクセスできるようにする
+# 参考: https://arcanum.work/contents
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+)$ $1\.html
+</ifModule>
